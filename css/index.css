@@ -31,7 +31,8 @@ body {
     background-image: linear-gradient(to bottom,
             #820000 0%,
             #000000 54%,
-            #000000 100%)
+            #000000 100%);
+    background-attachment: fixed;
 }
 
 .layout {
@@ -56,6 +57,13 @@ nav {
         text-decoration: none;
         padding: 8px 40px 8px 0px;
     }
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 a,
@@ -102,10 +110,10 @@ h1 {
 .product {
     box-shadow: 0 4px 6px rgb(255 255 255 / 10%);
     border-radius: 1.875rem;
-    width: 200px;
-    height: 250px;
+    width: 250px;
+    height: 300px;
     display: inline-block;
-    margin: auto 20px;
+    margin: 25px 20px;
 
     position: relative;
     overflow: hidden;
@@ -191,15 +199,6 @@ h4~p {
     max-width: 800px;
     height: auto;
     margin: 0 auto;
-
-    img {
-        width: 5%;
-        height: auto;
-    }
-
-    p {
-        color: black;
-    }
 }
 
 .search-bar {
@@ -211,6 +210,11 @@ h4~p {
     padding: 8px;
     display: flex;
     align-items: center;
+
+    img {
+        width: 5%;
+        height: auto;
+    }
 
     input {
         font-family: 'Merriweather';
@@ -235,6 +239,7 @@ h4~p {
 
     p {
         margin-top: 7px;
+        color: black;
     }
 
     input {
@@ -322,6 +327,12 @@ button {
     }
 
     .intro {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    span {
         width: 100%;
     }
 }
