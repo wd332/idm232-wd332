@@ -1,6 +1,8 @@
 <?php
 require_once 'config.php';
 
+$result = null;
+
 if (isset($_GET['query'])) {
     $search = urldecode($_GET['query']);
     $sql = "SELECT * FROM `recipedata`
@@ -97,7 +99,7 @@ if (isset($_GET['filter'])) {        // isset() function checks if a variable is
             </form>
         </div>
         <?php
-        if ($result->num_rows > 0): // prevents empty content and this says "if the database has more than 0 rows, execute the following"
+        if ($result && $result->num_rows > 0): // prevents empty content and this says "if the database has more than 0 rows, execute the following"
         ?>
             <div class="home">
                 <?php while ($row = $result->fetch_assoc()): ?> <!-- fetches the resulting rows and creates a loop that repeats the HTML layout for every recipe row in the data -->
