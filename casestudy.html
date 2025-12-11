@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="layout">
+        <img id="hero" src="casestudy-images/hero.webp" alt="hero" width="1000" height="617">
+        <div id="casestudy" class="info">
+            <h1>Hell's Paradise Case Study</h1>
+            <h2>The Overview</h2>
+            <p>Hell's Paradise is a recipe website for people looking for simple, easy to browse recipes when they are
+                craving something new. Through ideating, designing, and finally development, I created a fully
+                functioning website that pulls in data from the database for users to browse. Through this project, I
+                learned how to manage a database and execute things in PHP and mySQL.</p>
+            <hr>
+            <h2>Context & Challenge</h2>
+            <p>In this 10-week solo project, I built a fully functional website utilizing PHP and MySQL to create a
+                database-driven recipe website. I would be handling multiple types of recipe information (title,
+                ingredients, steps, and images) input into the database and have it returned based on user searches and
+                filters.</p>
+            <hr>
+            <h2>Process & Insight</h2>
+            <h3>Target Audience</h3>
+            <p>This is a recipe website for home cooks or individuals looking for simple, organized, and easy to browse
+                recipes. When they are craving for something specific or new, they want quick searching, filtering by
+                cuisine, and viewing step-by-step instructions.</p>
+            <h3>Design Sketches</h3>
+            <p>Features Required:</p>
+            <ul>
+                <li>home page</li>
+                <li>filter results</li>
+                <li>no results found</li>
+                <li>single recipe page</li>
+                <li>help page</li>
+            </ul>
+            <p>I struggled a little bit with designing my home page because of the search and filter features. I wasn't
+                sure if it was better to have them all on one page or a separate page, so I designed both to see how
+                they would look
+                like. In one option, I could have it all on one page for things to be easily accessible for users. In
+                the other option, I could have the search and filters on a separate page so that the home page can be
+                more focused on just browsing.</p>
+            <img class="design" src="casestudy-images/home.webp" alt="home" width="936" height="339">
+            <img class="design" src="casestudy-images/filter.webp" alt="filter" width="1007" height="352">
+            <p>For informing no results, I was also deciding between a pop up at the bottom of the screen or having
+                another page pull up when that happens. The first one has the information at the bottom where product
+                cards would show up if there are results. This design allows for consistency and creates a mental model
+                for users. The second one has a clean and simplistic design without being noisy.</p>
+            <img class="design" src="casestudy-images/noresults.webp" alt="no results" width="1112" height="402">
+            <p>The other features weren't as hard to design as I wanted a simple, top down layout for it to be easy for
+                users to read.</p>
+            <img class="design" src="casestudy-images/design.webp" alt="design" width="1346" height="752">
+            <h3>Style Guide</h3>
+            <p>I needed a theme for my website. Taking the fact that this is related to food, I decided on
+                "Hell's Paradise" as a play on words from Hell's Kitchen. I wanted a playful, humorous website with the
+                word choices.
+            </p>
+            <p>To keep it hell themed, I blend red and black together with white to make sure there's enough
+                contrast for visibility purposes. Since I have a gradient affect going on, I chose to create that affect
+                with my product cards since there are generally bright. I had images take up the whole card because this
+                is a recipe website, so food needs to be big and attracting for people to want it.</p>
+            <img class="design" src="casestudy-images/product.webp" alt="product" width="1897" height="458">
+            <p>For fonts, I wanted something bold and gothic. Jacques Francois Shadow is bold and stylized enough to be
+                used as titles and headings, while Merriweather is great for descriptions while still keeping that same
+                feeling.</p>
+            <img class="design" src="casestudy-images/font.webp" alt="font" width="1897" height="375">
+            <h3>Code/Development</h3>
+            <p>In Alpha, I started off with coding HTML and CSS with placeholder text and images to flesh out the
+                content, layout, style.</p>
+            <p>I struggled a bit with the product card since some images had different sizes with varying
+                lengths in their name. I had to make sure the name section had enough spacing around it to not feel too
+                tight, but also so that it doesn't take over their respective image. I also had an issue where the
+                images were stretched.</p>
+            <div class="learn">
+                <p>What I Learned:</p>
+                <ul>
+                    <li>how to create placeholder website utilizing HTML and CSS</li>
+                    <li>proportioned name to image</li>
+                    <li>kept images unstretched for visual appeal</li>
+                </ul>
+            </div>
+            <p>In Beta, I extracted the recipe data into a datasheet and imported it into a database for development. By
+                replacing the placeholder text and images with PHP and mySQL, I was able to generate a fully functioning
+                website that pulls in data from the database when needed.</p>
+            <p>After getting recipes generated on the home page, I had a better understanding of how PHP and mySQL
+                worked. During my testings with the site, I ran into problems with the search and filter. Because I
+                tried to simplify the code to save storage space, they
+                kept colliding with each other.</p>
+            <div class="learn">
+                <p>What I Learned:</p>
+                <ul>
+                    <li>created commands with PHP and mySQL to have the website extract the necessary data when needed
+                    </li>
+                    <li>separated the two functions with if statements so they can flow better</li>
+                </ul>
+            </div>
+            <p>In Final, I encountered compatibility issues because
+                the server running on an older version of PHP and mySQL, the website ran into problems so I had to make
+                sure that my code
+                was flexible enough so that older servers could run them. I also added more images so that the single
+                recipe page had more visuals.</p>
+            <div class="learn">
+                <p>What I Learned:</p>
+                <ul>
+                    <li>diagnosed compatibility issues tied to older server versions</li>
+                    <li>refactored code to maintain functionality</li>
+                </ul>
+            </div>
+            <hr>
+            <h2>The Solution</h2>
+            <p>For my pages, I chose to have the home page just for browsing recipes and had the search and filters in a
+                separate page. This way, users can focus on browsing and only go to the other page if need be.</p>
+            <p>For informing no results, I chose to keep it in the same page for consistency and so that users wouldn't
+                need to travel between pages often.</p>
+            <p>Single recipe page also has images to help assist users in case they need visual feedback while cooking.
+            </p>
+            <hr>
+            <h2>The Results</h2>
+            <p>In my 10 weeks, I ideated, designed, and developed my recipe website. I utilized PHP and mySQL to create
+                a fully functional website. Through testing of the website on a public server, product cards were
+                generated well on the home page and the corresponding data in the single recipe page were correct. I was
+                also able to generate recipes from the search and filter, and it returned a notification when no results
+                were found. Overall, I would say this project was a success.</p>
+            <p>I learned a lot about coding with PHP and mySQL and extracting data for the database. In the future, I
+                would make sure I have everything planned out, such as the data information, before executing anything
+                to development.</p>
+            <div class="website">
+                <a href="https://digmstudents.westphal.drexel.edu/~wd332/" target="_blank">Hell's Paradise Website</a>
+            </div>
+        </div>
+</body>
+
+</html>

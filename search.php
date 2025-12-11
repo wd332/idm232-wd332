@@ -1,9 +1,9 @@
 <?php
 require_once 'config.php';
 
-$search = urldecode($_GET['query']);
-
-$sql = "SELECT * FROM `recipedata`
+if (isset($_GET['query'])) {
+    $search = urldecode($_GET['query']);
+    $sql = "SELECT * FROM `recipedata`
         WHERE `recipe_heading` LIKE '%$search%'
         OR `recipe_subheading` LIKE '%$search%'
         OR `description` LIKE '%$search%'
@@ -12,17 +12,19 @@ $sql = "SELECT * FROM `recipedata`
         OR `image` LIKE '%$search%'
         OR `cuisine` LIKE '%$search%'
         OR `recipe_id` LIKE '%$search%'";      // selects all data from recipedata where the columns find the words input into $search
+    $result = $connection->query($sql);     // forms connection from config.php
+
+}
 
 if (isset($_GET['filter'])) {        // isset() function checks if a variable is set and is not NULL. if it's not, it'll execute the filter. htmlspecialchars() is used for security
     $filter = urldecode($_GET['filter']);
     $sql = "SELECT * FROM `recipedata` WHERE `cuisine` LIKE '$filter'";
+    if ($filter == "All") {
+        $sql = "SELECT * FROM recipedata";
+    }
+    $result = $connection->query($sql);     // forms connection from config.php
 }
 
-if ($filter == "All") {
-    $sql = "SELECT * FROM recipedata";
-}
-
-$result = $connection->query($sql);     // forms connection from config.php
 ?>
 
 <!DOCTYPE html>
@@ -109,10 +111,19 @@ $result = $connection->query($sql);     // forms connection from config.php
                 <?php endwhile; ?>
             </div>
         <?php endif;
-        $connection->close();
         ?>
         <?php
-        if ($result->num_rows == 0): // this says "if the database has 0 rows, execute the following"
+        if (!isset($_GET['query']) && !isset($_GET['filter'])): // this says "if the url  does not have a query and filter, execute the following"
+        ?>
+            <img class="ramsay" src="images/angry-ramsay.jpg" alt="steak" width="400" height="400">
+            <div class="no-results">
+                <h3>YOU IDIOT SANDWICH</h3>
+                <p>
+                    Why are you being so slow? Hurry and pick something. People are starving!
+                </p>
+            </div>
+        <?php
+        elseif ($result->num_rows == 0): // this says "if the database has 0 rows, execute the following"
         ?>
             <div class="no-results">
                 <h3>NO RESULTS FOUND</h3>

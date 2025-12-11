@@ -59,12 +59,16 @@ $result = $connection->query($sql);     // forms connection from config.php
             <hr>
             <?php
             $steps = explode("*", $row['steps']);
+            $step_images = explode("*", $row['steps_images']);
             $step_number = 1; // starts step as 1
             ?>
             <?php foreach ($steps as $instruction): ?>
-                <div>
-                    <h4>Step <?php echo $step_number ?></h4>
-                    <p><?php echo $instruction ?></p>
+                <div class="step">
+                    <div>
+                        <h4>Step <?php echo $step_number ?></h4>
+                        <p><?php echo $instruction ?></p>
+                    </div>
+                    <img src="<?php echo $step_images[$step_number - 1] ?>" alt="<?php echo $row['recipe_heading'] ?>">
                 </div>
                 <hr>
             <?php
